@@ -23,14 +23,5 @@ final router = GoRouter(
         );
       },
     ),
-    // GoRoute(
-    //   path: '/bmi/result',
-    //   builder: (context, state) {
-    //     final uri = Uri.parse(state.uri.toString());
-    //     return BmiResult(
-    //         cm: double.tryParse(uri.queryParameters['cm']!) ?? 0.0,
-    //         weight: double.tryParse(uri.queryParameters['weight']!) ?? 0.0);
-    //   },
-    // ),
   ],
 );

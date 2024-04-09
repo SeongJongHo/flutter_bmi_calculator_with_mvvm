@@ -115,16 +115,15 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 const SizedBox(height: 16),
                 Column(children: [
-                  (widget._viewModel.bmiList.isNotEmpty)
-                      ? Column(
-                          children: [
-                            Text('최근 결과'),
-                            ..._buildResult(
-                                widget._viewModel.bmiList.first.bmi.toDouble()),
-                            Divider()
-                          ],
-                        )
-                      : const Divider(),
+                  Column(
+                    children: [
+                      Text('최근 결과'),
+                      ..._buildResult((widget._viewModel.bmiList.isNotEmpty
+                          ? widget._viewModel.bmiList.first.bmi.toDouble()
+                          : -1)),
+                      Divider()
+                    ],
+                  ),
                   ...widget._viewModel.bmiList.map(
                     (e) => Container(
                       padding: const EdgeInsets.all(8),

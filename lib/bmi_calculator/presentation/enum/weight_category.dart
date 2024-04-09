@@ -37,7 +37,9 @@ enum WeightCategory {
   }
 
   static WeightCategory getCategory(double bmi) {
-    if (bmi < 18.5) {
+    if (bmi < 0) {
+      return WeightCategory.unknown;
+    } else if (bmi < 18.5) {
       return WeightCategory.underWeight;
     } else if (bmi < 23) {
       return WeightCategory.normal;
@@ -45,10 +47,8 @@ enum WeightCategory {
       return WeightCategory.overWeight;
     } else if (bmi < 30) {
       return WeightCategory.obese;
-    } else if (bmi < 35) {
-      return WeightCategory.severelyObese;
     } else {
-      return WeightCategory.unknown;
+      return WeightCategory.severelyObese;
     }
   }
 }
